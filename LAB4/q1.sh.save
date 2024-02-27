@@ -1,0 +1,4 @@
+#!/bin/bash
+original_file="$1"
+1. Write a shell script to make a duplicate copy of a specified file through command line.
+cp "$original_file" "$backup_file"

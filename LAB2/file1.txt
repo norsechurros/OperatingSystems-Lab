@@ -1,0 +1,39 @@
+This command would open a display screen with 25 lines and with tilt (~) symbol at the
+start of each line. The first syntax would save the file in the filename mentioned and for
+the next the filename must be mentioned at the end.
+Options :
+1.vi +n <filename> - this would point at the nth line (cursor pos).
+2.vi –n <filename> - This command is to make the file to read only to change from one
+mode to another press escape key.
+Saving and Quitting from vi
+To move editor from command node to edit mode, you have to press the <ESC> key.
+<ESC> w Command
+To save the given text present in the file.
+<ESC> q! Command
+To quit the given text without saving.
+<ESC> wq Command
+This command quits the vi editor after saving the text in the
+mentioned file.
+<ESC> x Command
+This command is same as “wq” command it saves and quit.
+<ESC> q Command
+This command would quit the window but it would ask for
+again to save the file.
+Lab Exercises
+1. Execute all the commands explained in this section and write the output.
+2. Write grep commands to do the following activities:
+• To select the lines from a file that have exactly two characters.
+• To select the lines from a file that start with the upper case letter.
+• To select the lines from a file that end with a period.
+• To select the lines in a file that has one or more blank spaces.
+• To select the lines in a file and direct them to another file which has digits as
+one of the characters in that line.
+3. Create file studentInformation.txt using vi editor which contains details in the follow-
+ing format.
+RegistrationNo:Name:Department:Branch:Section:Sub1:Sub2:Sub3
+1234:XYZ:ICT:CCE:A:80:60:70 ... (add atleast 10 rows)
+i) Display the number students( only count) belonging to ICT department.
+ii) Replace all occurrences of IT branch with “Information Technology” and save
+the output to ITStudents.txt
+iii) Display the average marks of student with the given registration number
+“1234” (or any specific existing number).
