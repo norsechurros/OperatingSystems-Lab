@@ -1,0 +1,84 @@
+SOLUTION TO BOUNDED BUFFER PRODUCERS_CONSUMERS PROBLEM USING SEMAPHORES
+
+process producers_consumers
+{parent process}
+const int capacity =5;
+int item ;
+buffer: array[1..capacity] of item;
+empty, full : semaphore; {general} //Initialize empty to capacity and full to 0
+pmutex, cmutex :semaphore; {binary} //Initialize to 1
+int in =1, out=1;
+
+// initiate processes producers, consumers
+}end { producers_consumers }
+
+process producer;
+	do
+	{
+	//Produce the data to be put into buffer in anyway
+	wait(empty);
+	wait(pmutex);
+	buffer[in] = producedItem;
+	in = (in mod capacity) + 1;
+	signal(pmutex);
+	signal(full);
+	other_X_processing
+	}while (TRUE);
+	end; {producer}
+	
+process consumer;
+do
+	{ wait(full);
+	wait(cmutex);
+	citem = buffer[out];
+	out = (out mod capacity) + 1;
+	signal(cmutex);
+	signal(empty);
+	// Use the consumed data
+	} while(TRUE);
+end; {consumer}
+
+-----------------------------------------------------------------------------------------------------
+
+SOLUTION TO READERS WRITERS PROBLEM USING SEMAPHORES
+
+program readers_writers;
+var
+readercount : integer;
+mutex, write : semaphore; {binary}
+process readerX;
+begin
+while true do
+begin
+{obtain permission to enter}
+wait(mutex);
+readercount := readercount +1;
+if readercount = 1 then wait(write);
+signal(mutex);
+...
+{reads}
+...
+wait(mutex);
+readercount = readercount – 1;
+if readercount = 0 then signal(write);
+signal(mutex);
+other_X_processing
+end {while}
+end; {reader}
+process writerZ;
+begin
+while true do
+begin
+wait(write);
+...
+signal(write);
+Other_Z_processing
+end {while}
+end; {writerZ}
+{parent process}
+begin {readers_writers}
+readercount : = 0;
+signal(mutex);
+signal (write);
+initiate readers, writers
+end {readers_writers}
