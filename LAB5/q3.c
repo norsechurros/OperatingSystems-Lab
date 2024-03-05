@@ -106,3 +106,21 @@ int main() {
 
     return 0;
 }
+
+
+/*./q3
+Enter the number of strings: 3
+Enter the strings:
+hello
+world
+in
+Child process 1 (Bubble sort):
+hello
+in
+world
+Child process 2 (Selection sort):
+hello
+in
+world
+Child process 1 terminated.
+*/

@@ -57,3 +57,20 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+/*./q2 hello world in a orange
+Child process:
+Sorted strings:
+a
+hello
+in
+orange
+world
+Parent process:
+Unsorted strings:
+hello
+world
+in
+a
+orange
+*/

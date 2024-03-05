@@ -24,3 +24,8 @@ int main() {
     return 0;
 }
 
+/*./q1 
+Parent process: PID = 5888, PPID = 5674
+Hello from the parent process!
+Child process: PID = 5889, PPID = 5888
+Hello from the child process!*/
