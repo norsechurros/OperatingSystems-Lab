@@ -151,3 +151,31 @@ int main() {
     return 0;
 }
 
+/*
+OUTPUT:
+
+Disk Scheduling Algorithms
+1. SSTF
+2. SCAN
+3. C-SCAN
+4. C-LOOK
+Enter choice: 2
+Enter length of queue: 8
+Enter queue: 98 183 37 122 14 124 65 67
+Enter Read-Write Head and Tail: 53,199
+head at 65
+head at 67
+head at 98
+head at 122
+head at 124
+head at 124
+head at 124
+head at 124
+head at 122
+head at 98
+head at 67
+head at 65
+head at 53
+
+
+*/
