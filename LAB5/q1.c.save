@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main() {
+    pid_t pid;
+
+    pid = fork();
+
+    if (pid < 0) {
+        // Error occurred
+        fprintf(stderr, "Fork failed\n");
+        return 1;
+    } else if (pid == 0) {
+        // Child process
+        printf("Child process: PID = %d, PPID = %d\n", getpid(), getppid());
+        printf("Hello from the child process!\n");
+    } else {
+        // Parent process
+        printf("Parent process: PID = %d, PPID = %d\n", getpid(), getppid());
+        printf("Hello from the parent process!\n");
+    }
+
+    return 0;
+}
+
+/*./q1 
+Enter the number of processes: 4
+Enter arrival time for process 1: 0
+Enter burst time for process 1: 8
+Enter priority for process 1: 1
+Enter arrival time for process 2: 5
+Enter burst time for process 2: 4
+Enter priority for process 2: 2
+Enter arrival time for process 3: 3
+Enter burst time for process 3: 9
+Enter priority for process 3: 3
+Enter arrival time for process 4: 7
+Enter burst time for process 4: 16
+Enter priority for process 4: 4
+Choose scheduling algorithm:
+1. Preemptive SJF
+2. Round Robin
+3. Non-preemptive Priority
+Enter your choice: 2
+Enter time quantum for Round Robin: 3
+Process 1 is executing at time 0
+Process 3 is executing at time 3
+Process 1 is executing at time 6
+Process 2 is executing at time 9
+Process 3 is executing at time 12
+Process 4 is executing at time 15
+Process 1 is executing at time 18
+Process 2 is executing at time 20
+Process 3 is executing at time 21
+Process 4 is executing at time 24
+Process 4 is executing at time 27
+Process 4 is executing at time 30
+Process 4 is executing at time 33
+Process 4 is executing at time 36
+*/

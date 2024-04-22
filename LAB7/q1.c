@@ -67,3 +67,18 @@ int main() {
 
     return 0;
 }
+
+/*./q1 
+Produced: 0
+Consumed: 0
+Produced: 1
+Consumed: 1
+Produced: 2
+Consumed: 2
+Produced: 3
+Consumed: 3
+Produced: 4
+Consumed: 4
+Produced: 5
+Consumed: 5
+*/
